@@ -11,7 +11,6 @@ var app = {
   },
   onDeviceReady: function(){
     alert("cerco la posizione");
-    navigator.geolocation.getCurrentPosition(app.onSuccessGeo, fail)
   },
   // chiamata quando la posizione è stata letta
   onSuccessGeo: function(position){
@@ -23,9 +22,9 @@ var app = {
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
-    alert("ok");
+    alert("mappa ok");
   }
 }
 
-
 app.initialize();
+google.maps.event.addDomListener(window, 'load', initialize);
