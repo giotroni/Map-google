@@ -16,17 +16,14 @@ var app = {
   // chiamata quando la posizione è stata letta
   onSuccessGeo: function(position){
     // aggiorna le coordinate
-    var lat = position.coords.latitude;
-    var lng = position.coords.longitude;
-    var latlng = new google.maps.LatLng( lat, lng);
-    alert("Lat: " + lat + " lng: " + lng);
-    var mapOptions = {
-      center: latlng,
-      zoom: 16,
-      myTypeId: google.maps.MapTypeId.ROADMAP
-    };
     
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    var mapOptions = {
+      center: { lat: -34.397, lng: 150.644},
+      zoom: 8
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+    alert("ok");
   }
 }
 
