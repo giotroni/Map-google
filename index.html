@@ -1,25 +1,25 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Mappa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-    <script type="text/javascript" src="phonegap.js"></script>
-
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH7uaEdJNrfDU4RHjgtPg971Fm8pHzZ3o">
     </script>
-
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-
-</head>
-
-<body>
-    <h2>Mappa</h2>
-    <div id="map-canvas" style="width: 100% !important;">
-	<!-- map loads here... -->
-    </div>
-
-</body>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: -34.397, lng: 150.644},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+<div id="map-canvas"></div>
+  </body>
 </html>
