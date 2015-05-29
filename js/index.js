@@ -1,33 +1,36 @@
-// v0.1
+(function (global) {
+    "use strict";
 
-// MAIN
-var app = {
-  // inixzializzazione di phonegap
-  initialize: function() {
-    this.bindEvents();
-  },
-  bindEvents: function(){
-    document.addEventListener("deviceready", app.onDeviceReady, false);
-  },
-  onDeviceReady: function(){
-    alert("carico la mappa");
-    $.getScript('http://maps.google.com/maps/api/js?sensor=false&callback=onMapsApiLoaded');
-    alert("mappa letta");
-  }
-}
+    function onDeviceReady() {
+        document.addEventListener("online", onOnline, false);
+        document.addEventListener("resume", onResume, false);
+        loadMapsApi();
+    }
 
-// chiamata quando la posizione è stata letta
-function onMapsApiLoaded(){
-  // aggiorna le coordinate
-  alert("Entro nella funzione");
-  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-  var mapOptions = {
-    center: myLatlng ,
-    zoom: 8
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-  alert("mappa ok");
-}
+    function onOnline() {
+        loadMapsApi();
+    }
 
-app.initialize();
+    function onResume() {
+        loadMapsApi();
+    }
+
+    function loadMapsApi() {
+        if (navigator.connection.type === Connection.NONE || (global.google !== undefined && global.google.maps)) {
+            return;
+        }
+
+        //TODO: Add your own Google maps API key to the URL below.
+        $.getScript('https://maps.googleapis.com/maps/api/js?sensor=true&callback=onMapsApiLoaded');
+    }
+
+    global.onMapsApiLoaded = function () {
+        // Maps API loaded and ready to be used.
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: new google.maps.LatLng(-34.397, 150.644)
+        });
+    };
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+})(window);
