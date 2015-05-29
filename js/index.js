@@ -27,6 +27,7 @@
 
     global.onMapsApiLoaded = function () {
         // Maps API loaded and ready to be used.
+        alert("on load");
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 8,
             center: new google.maps.LatLng(-34.397, 150.644)
