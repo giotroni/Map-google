@@ -17,9 +17,10 @@
 
     function loadMapsApi() {
         if (navigator.connection.type === Connection.NONE || (global.google !== undefined && global.google.maps)) {
+          alert("no connection");
             return;
         }
-
+        alert("connsesso: carico la mappa");
         //TODO: Add your own Google maps API key to the URL below.
         $.getScript('https://maps.googleapis.com/maps/api/js?sensor=true&callback=onMapsApiLoaded');
     }
