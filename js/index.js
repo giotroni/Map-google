@@ -13,7 +13,7 @@ function onMappaCaricata() {
              
 function caricaMappa() {
   alert("Partito");
-  $("#btnLoad").on("click", onMappaCaricata);    
+  onMappaCaricata();
 }
 
 
