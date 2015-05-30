@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "it.troni.passapport"
+        id        = "it.troni.firstapp"
         versionCode="10"
         version   = "1.1.0">
 
     <name>Map-google</name>
 
     <description>
-        Raggiungi le tue mete
+        Una prova
     </description>
 
     <author href="http://www.troni.it" email="giorgio@troni.it">
-        Giorgio Troni
+        Girogio Troni
     </author>
  
     <gap:platform name="android" />
+    
+    <icon src="img/icon.jpg" />
+    
 
 </widget>
