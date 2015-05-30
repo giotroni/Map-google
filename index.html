@@ -4,10 +4,11 @@
     <title>Map Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
 
     <style>
 	#content {
@@ -20,8 +21,6 @@
         }
     </style>
 
-    <script type="text/javascript" src="js/index.js"></script>
-
 </head>
 
 <body>
@@ -29,11 +28,11 @@
         <div data-role="header">
             <h2>Titolo</h2>
         </div>
-        <div role="main" id="content">
-	    <div id="map_canvas" style="height:100%"></div>
+        <div role="main" class="ui-content" id="content-home">
+	    Centro
         </div>
         <div data-role="footer" data-position="fixed">
-	    <h3>vedi tu...</h3>
+	    <h3>Fine...</h3>
         </div>
 
     </div><!-- /page-home -->
