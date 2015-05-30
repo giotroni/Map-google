@@ -1,4 +1,3 @@
-
 var map;
 function onMappaCaricata() {
   alert("on load");
@@ -16,21 +15,5 @@ function caricaMappa() {
   onMappaCaricata();
 }
 
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    onDeviceReady: function() {
-      google.maps.event.addDomListener(window, 'load', caricaMappa);    }
-}
 
-app.inizialize();
+google.maps.event.addDomListener(window, 'load', caricaMappa);
