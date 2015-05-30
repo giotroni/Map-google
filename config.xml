@@ -19,5 +19,6 @@
     
     <icon src="img/icon.jpg" />
     
+    <access origin="*" />
 
 </widget>
