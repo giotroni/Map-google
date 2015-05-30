@@ -13,6 +13,7 @@ function onMappaCaricata() {
              
 function caricaMappa() {
   alert("Partito");
+  onMappaCaricata();
 }
 
 var app = {
@@ -28,16 +29,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-      // app.receivedEvent('deviceready');
-      onMappaCaricata();
-    }
+      google.maps.event.addDomListener(window, 'load', caricaMappa);    }
 }
 
-
-
 app.inizialize();
-google.maps.event.addDomListener(window, 'load', caricaMappa);
